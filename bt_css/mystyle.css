@@ -1,0 +1,33 @@
+.wrapper
+{
+    border: 1px solid red;
+}
+.header,.footer
+{
+    background-color: #002347;
+    padding: 10px;
+}
+.menu
+{
+    background-color: lightgray;
+    padding: 10px 0px;
+}
+.left,.right
+{
+    padding: 250px 0px;
+    background-color: lightgoldenrodyellow;
+}
+.content
+{
+    padding: 250px 0px;
+    background-color: lightcyan;
+}
+.logo
+{
+    height: 100px;
+    background-color: aliceblue;
+}
+.socialIcon
+{
+    border: 1px solid red ;
+}
