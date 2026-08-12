@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createCat } from "../api/client";
+import { createCat, ValidationError } from "../api/client";
 import CatForm, { CatFormValues } from "../components/CatForm";
 
 const empty: CatFormValues = {
@@ -24,8 +24,12 @@ export default function AddCat() {
     try {
       const created = await createCat(values);
       navigate(`/cats/${created.id}`);
-    } catch {
-      setError("Couldn't save. Check that the backend is running.");
+    } catch (err) {
+      if (err instanceof ValidationError) {
+        setError(err.message);
+      } else {
+        setError("Couldn't save. Check that the backend is running.");
+      }
     } finally {
       setSaving(false);
     }

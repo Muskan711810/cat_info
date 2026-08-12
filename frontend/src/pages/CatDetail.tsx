@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import {
   CatEntry,
   EditConflictError,
+  ValidationError,
   deleteCat,
   fetchCat,
   updateCat,
@@ -66,9 +67,11 @@ export default function CatDetail() {
       const updated = await updateCat(cat.id, { ...form, version: cat.version });
       setCat(updated);
       setEditing(false);
-    } catch (err) {
+} catch (err) {
       if (err instanceof EditConflictError) {
         setConflict(true);
+      } else if (err instanceof ValidationError) {
+        setSaveError(err.message);
       } else {
         setSaveError("Couldn't save. Check that the backend is running.");
       }
