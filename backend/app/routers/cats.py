@@ -63,5 +63,11 @@ def delete_cat(cat_id: int, db: Session = Depends(get_db)):
     cat = db.query(models.CatEntry).filter(models.CatEntry.id == cat_id).first()
     if not cat:
         raise HTTPException(status_code=404, detail="Cat entry not found")
+
+    # Remove this entry's edit history first — Postgres enforces the
+    # foreign key from edit_log to cat_entries, so deleting the cat
+    # while log rows still point to it would fail.
+    db.query(models.EditLog).filter(models.EditLog.cat_entry_id == cat_id).delete()
+
     db.delete(cat)
     db.commit()
