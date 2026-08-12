@@ -4,15 +4,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        parchment: "#EFE7D3",
-        ink: "#20301F",
-        pine: "#33513C",
-        marigold: "#C9791A",
-        rust: "#9C4A2C",
+        parchment: "#ffffff",
+        ink: "#202122",
+        pine: "#0645ad",
+        marigold: "#72777d",
+        rust: "#d33",
+        box: "#f8f9fa",
+        boxhead: "#eaecf0",
       },
       fontFamily: {
-        display: ["Fraunces", "serif"],
-        body: ["Karla", "sans-serif"],
+        display: ["Georgia", "Times New Roman", "serif"],
+        body: ["Helvetica Neue", "Arial", "sans-serif"],
       },
     },
   },

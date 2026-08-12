@@ -1,11 +1,11 @@
 export default function CatCardSkeleton() {
   return (
-    <div className="border-2 border-ink/10 bg-parchment animate-pulse">
-      <div className="aspect-[4/3] bg-ink/10" />
-      <div className="p-4 space-y-2">
-        <div className="h-3 w-12 bg-ink/10" />
-        <div className="h-5 w-2/3 bg-ink/10" />
-        <div className="h-3 w-1/3 bg-ink/10" />
+    <div className="flex gap-3 p-3 border border-ink/15 bg-parchment animate-pulse">
+      <div className="w-16 h-16 flex-shrink-0 bg-box" />
+      <div className="flex-1 space-y-2 py-1">
+        <div className="h-4 w-1/2 bg-box" />
+        <div className="h-3 w-1/3 bg-box" />
+        <div className="h-3 w-full bg-box" />
       </div>
     </div>
   );
