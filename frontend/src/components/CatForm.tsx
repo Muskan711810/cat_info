@@ -52,6 +52,7 @@ export default function CatForm({
         <input
           value={values.breed}
           onChange={(e) => set("breed", e.target.value)}
+          required
           className="w-full border-2 border-ink/15 bg-white/40 px-3 py-2 font-body focus:outline-none focus:border-pine"
         />
       </div>
@@ -89,6 +90,7 @@ export default function CatForm({
         <textarea
           value={values.summary}
           onChange={(e) => set("summary", e.target.value)}
+          required
           rows={2}
           className="w-full border-2 border-ink/15 bg-white/40 px-3 py-2 font-body focus:outline-none focus:border-pine"
         />
